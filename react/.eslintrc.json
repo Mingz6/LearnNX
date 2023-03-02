@@ -1,7 +1,16 @@
 {
   "root": true,
   "ignorePatterns": ["**/*"],
-  "plugins": ["@nrwl/nx"],
+  "plugins": [
+    "@nrwl/nx",
+    "eslint-plugin-import",
+    "eslint-plugin-react",
+    "eslint-plugin-react-hooks",
+    "jsx-a11y",
+    "@typescript-eslint",
+    "lodash"
+  ],
+  "parser": "@typescript-eslint/parser",
   "overrides": [
     {
       "files": ["*.ts", "*.tsx", "*.js", "*.jsx"],
@@ -24,12 +33,66 @@
     {
       "files": ["*.ts", "*.tsx"],
       "extends": ["plugin:@nrwl/nx/typescript"],
-      "rules": {}
+      "rules": {
+        "curly": ["error", "all"],
+        "brace-style": ["error", "1tbs"],
+        "no-plusplus": "off",
+        "arrow-body-style": "off",
+        "function-call-argument-newline": ["warn", "consistent"],
+        "func-names": ["warn", "as-needed"],
+        "max-len": ["error", { "code": 120 }],
+        "no-console": ["warn", { "allow": ["error"] }],
+        "no-else-return": ["error", { "allowElseIf": true }],
+        "no-implicit-coercion": [
+          "error",
+          {
+            "boolean": false,
+            "number": true,
+            "string": true,
+            "disallowTemplateShorthand": false,
+            "allow": []
+          }
+        ],
+        "react/jsx-uses-react": "off",
+        "react/react-in-jsx-scope": "off",
+        "@typescript-eslint/naming-convention": [
+          "error",
+          {
+            "selector": "interface",
+            "format": ["PascalCase"],
+            "custom": {
+              "regex": "^I[A-Z][A-z]",
+              "match": false
+            }
+          }
+        ],
+        "lodash/prefer-is-nil": 2,
+        "lodash/prefer-get": [2, 3],
+        "lodash/prefer-lodash-typecheck": 2,
+        "lodash/prefer-matches": [2, 3]
+      }
     },
     {
       "files": ["*.js", "*.jsx"],
       "extends": ["plugin:@nrwl/nx/javascript"],
       "rules": {}
+    },
+    {
+      "files": ["*.spec.ts", "*.spec.tsx", "*.spec.js", "*.spec.jsx"],
+      "env": {
+        "jest": true
+      },
+      "rules": {}
     }
+  ],
+  "extends": [
+    "eslint:recommended",
+    "plugin:import/warnings",
+    "plugin:@typescript-eslint/recommended",
+    "prettier",
+    "plugin:jsx-a11y/recommended",
+    "plugin:react/recommended",
+    "plugin:storybook/recommended",
+    "plugin:react-hooks/recommended"
   ]
 }
