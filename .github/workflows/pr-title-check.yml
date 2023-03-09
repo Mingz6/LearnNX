@@ -1,0 +1,32 @@
+on:
+  pull_request:
+    types: 
+     - opened
+     - reopened
+     - edited
+     - synchronize
+     - reopened
+    branches: 
+     - main
+     - test
+     - dev
+
+name: Validate PR title
+jobs:
+  validate_pr_title:
+    runs-on: ubuntu-20.04
+    steps:
+    - name : Print Title of PR
+      run: echo PR title is ${{ github.event.pull_request.title }}
+
+    - name : Print Target Branch
+      run: echo Target branch is ${{ github.base_ref}}
+      
+    - name: Check out repo        
+      uses: actions/checkout@v2
+
+
+    - name: Validate PR Title
+      shell: pwsh
+      run: |
+        .\.github\validatePrTItle.ps1 "${{ github.event.pull_request.title }}" "${{github.base_ref}}"
