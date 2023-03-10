@@ -16,3 +16,14 @@ module keyVault './core/keyVaultCore.bicep' = {
     tags: tags
   }
 }
+
+var hostingPlanName = '${abbrs.webServerFarms}-${base}'
+resource hostingPlan 'Microsoft.Web/serverfarms@2021-03-01' = {
+  name: hostingPlanName
+  location: location
+  sku: {
+    name: 'F1'
+    tier: 'Free'
+  }
+  properties: {}
+}
