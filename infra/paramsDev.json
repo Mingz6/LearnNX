@@ -1,0 +1,25 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"environmentName": {
+			"value": "dev"
+		},
+		"tags" : {
+			"value": {
+				"Application":"LearnNx",
+				"Environment":"Dev"
+			}
+		},
+		"staticWebAppSku":{
+			"value": {
+					"name": "Standard",
+					"tier": "Standard"
+			}
+		},
+		"allowedOrigins": {
+			"value": "https://localhost:4200,https://120.0.0.1:4200,https://ming.dev.learnnx.edu"
+		}
+	}
+}
+
