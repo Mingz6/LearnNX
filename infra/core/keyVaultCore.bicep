@@ -6,6 +6,7 @@ param location string = resourceGroup().location
 param tags object
 
 // Azure Team Object id. 
+// Allow this team to access this keyvault
 var AzureTeamObjId = '<00000000-0000000000000-00000000-00000000-00000000>'
 
 resource keyVault 'Microsoft.KeyVault/vaults@2022-07-01' = {
