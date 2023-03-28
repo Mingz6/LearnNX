@@ -2,6 +2,7 @@
   "name": "learnnx",
   "version": "0.0.1",
   "license": "MIT",
+  "homepage": "https://ming233.github.io/learnx",
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
