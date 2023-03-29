@@ -41,3 +41,14 @@ module web './core/staticwebappCore.bicep' = {
     staticWebAppSku: staticWebAppSku
   }
 }
+
+var storybookServiceName = 'stapp-ming-${base}-storybook-${environmentName}'
+module storybookWeb './core/staticwebappCore.bicep' = if (environmentName == 'test') {
+  name: storybookServiceName
+  params: {
+    staticSiteName: storybookServiceName
+    tags: tags
+    location: 'westus2'
+    staticWebAppSku: staticWebAppSku
+  }
+}
