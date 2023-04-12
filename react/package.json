@@ -2,10 +2,10 @@
   "name": "learnnx",
   "version": "0.0.1",
   "license": "MIT",
-  "homepage": "https://ming233.github.io/learnx",
+  "homepage": "https://mingz6.github.io/learnNx",
   "scripts": {
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
+    "predeploy": "npx nx build mingzsite -- --prod --baseHref=/learnNx/",
+    "deploy": "gh-pages -d dist/apps/mingzsite",
     "dev:mingzsite": "npx nx run mingzsite:serve",
     "ui": "npx nx run shared-ui:storybook"
   },
