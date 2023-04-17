@@ -6,8 +6,8 @@ param location string = resourceGroup().location
 param tags object
 
 // Azure Team Object id. 
-// Allow this team to access this keyvault
-var AzureTeamObjId = '<00000000-0000000000000-00000000-00000000-00000000>'
+// Allow this team/user to access this keyvault
+var AzureAdObjId = '683ceeb5-9b9c-4a19-b783-819091a4ae53'
 
 resource keyVault 'Microsoft.KeyVault/vaults@2022-07-01' = {
   name: name
@@ -21,7 +21,7 @@ resource keyVault 'Microsoft.KeyVault/vaults@2022-07-01' = {
     }
     accessPolicies:[
       {
-        objectId: AzureTeamObjId
+        objectId: AzureAdObjId
         tenantId: subscription().tenantId
         permissions: {
           keys: [
