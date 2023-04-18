@@ -1,0 +1,43 @@
+name: PROD - Deploy MingZ Site web app to Azure Static Web Apps
+on:
+  push:
+    branches: 
+      - main
+  pull_request:
+    types: 
+      - opened
+      - synchronize
+      - reopened 
+      - closed
+    branches: 
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  setup-static-web-app:
+    uses: ./.github/workflows/learnnx-azure-static-web-base.yml
+    with:
+      app-location: "react"
+      app-artifact-location: "dist/apps/mingzsite"
+      app-build-command: "npx nx run regi:build --mode production"
+    secrets:
+      # Where is this token coming from? Deployment token?
+      token: ${{ secrets.AZWEBTOKEN }}
+    permissions:
+      pull-requests: write
+      contents: read
+
+  setup-storybook-static-web-app:
+    uses: ./.github/workflows/learnnx-azure-static-web-base.yml
+    with:
+      app-location: 'react'
+      app-artifact-location: 'dist/storybook/teams-components'
+      app-build-command: 'npx nx run teams-components:build-storybook'
+    secrets:
+      # Where is this token? The static web app development token.
+      token: ${{ secrets.AZURE_STATIC_WEB_APPS_STORYBOOK_API_TOKEN_PROD }}
+    permissions:
+      pull-requests: write
+      contents: read
