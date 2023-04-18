@@ -1,0 +1,42 @@
+on:
+  workflow_call:
+    inputs:
+      params-file:
+        type: string
+        required: true
+      resource-group-name:
+        type: string
+        required: true
+    secrets:
+      az-credentials:
+        required: true
+      az-subscription-id:
+        required: true
+      repository-token:
+        required: true
+
+name: Azure Bicep
+jobs:
+  build-and-deploy:
+    # if: github.event.pull_request.merged
+    runs-on: ubuntu-latest
+    steps:
+      # Checkout code
+      - uses: actions/checkout@main
+
+        # Log into Azure
+      - name: login
+        uses: azure/login@v1
+        with:
+          # this az-credentials is coming from learnnx-deploy-bicep-prod.yml file
+          # secrets must be capitalized
+          creds: ${{ secrets.az-credentials }}
+
+      - name: deploy
+        uses: azure/arm-deploy@v1
+        with:
+          subscriptionId: ${{ secrets.az-subscription-id }}
+          resourceGroupName: ${{ inputs.resource-group-name }}
+          template: ./infra/main.bicep
+          parameters: ${{ inputs.params-file }}
+          failOnStdErr: false
