@@ -8,9 +8,9 @@ on:
         type: string
         required: true
     secrets:
-      az-credentials:
+      azure-credentials:
         required: true
-      az-subscription-id:
+      azure-subscription-id:
         required: true
       repository-token:
         required: true
@@ -30,12 +30,12 @@ jobs:
         with:
           # this az-credentials is coming from learnnx-deploy-bicep-prod.yml file
           # secrets must be capitalized
-          creds: ${{ secrets.az-credentials }}
+          creds: ${{ secrets.azure-credentials }}
 
       - name: deploy
         uses: azure/arm-deploy@v1
         with:
-          subscriptionId: ${{ secrets.az-subscription-id }}
+          subscriptionId: ${{ secrets.azure-subscription-id }}
           resourceGroupName: ${{ inputs.resource-group-name }}
           template: ./infra/main.bicep
           parameters: ${{ inputs.params-file }}
