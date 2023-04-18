@@ -16,9 +16,6 @@
 					"name": "Standard",
 					"tier": "Standard"
 			}
-		},
-		"allowedOrigins": {
-			"value": "https://ming.test.learnnx.edu"
 		}
 	}
 }

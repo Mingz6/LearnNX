@@ -16,9 +16,6 @@
 					"name": "Standard",
 					"tier": "Standard"
 			}
-		},
-		"allowedOrigins": {
-			"value": "https://localhost:4200,https://120.0.0.1:4200,https://ming.dev.learnnx.edu"
 		}
 	}
 }
