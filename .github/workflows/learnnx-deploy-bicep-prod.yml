@@ -7,7 +7,7 @@ on:
       - "infra/**/*.json"
       - "infra/**/*.ps1"
       - "core/**/*.bicep"
-      - ".github/workflows/learnnx-deploy-bicep.yml"
+      - ".github/workflows/learnnx-deploy-bicep-base.yml"
 
 name: Azure Bicep Prod
 jobs:
