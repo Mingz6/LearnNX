@@ -2,7 +2,7 @@ name: PROD - Deploy MingZ Site web app to Azure Static Web Apps
 on:
   push:
     branches: 
-      - main
+      - master
   pull_request:
     types: 
       - opened
@@ -10,7 +10,7 @@ on:
       - reopened 
       - closed
     branches: 
-      - main
+      - master
 
 permissions:
   contents: read
