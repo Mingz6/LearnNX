@@ -20,7 +20,7 @@ jobs:
       resource-group-name: "development-ming"
     secrets:
       # This AZURE_CREDENTIALS_DEVELOPMENT_MING is coming from app registration ==> DEVELOPMENT MING Deployment Account
-      # ASK RYAN
+      # You can test this secret with command: az login --service-principal -u <app-id> -p <-secrets> --tenant <tenant>
       azure-credentials: ${{ secrets.AZURE_CREDENTIALS_DEVELOPMENT_MING }}
       azure-subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
       # Github ==> Setting ==> Developer setting ==> Person Access Tokens ==> Fine-grained Tokens
@@ -28,4 +28,4 @@ jobs:
       # Option 1: ${{ secrets.LEARNNX_REPOSITORY_TOKEN }}
       # Option 2: ${{ secrets.REPOSITORY_TOKEN }}
       # Option 3: Workflow permissions
-      repository-token: ${{ secrets.REPOSITORY_TOKEN }}
+      repository-token: ${{ secrets.MING_REPOSITORY_TOKEN }}
