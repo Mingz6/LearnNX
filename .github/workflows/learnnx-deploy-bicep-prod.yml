@@ -16,9 +16,10 @@ jobs:
     with:
       params-file: "./infra/paramsProd.json"
       # the resource group name should be replace with *-Prod, *-Test, *-Dev
+      # e.g: app-prod
       resource-group-name: "development-ming"
     secrets:
-      # This AZURE_CREDENTIALS_LEARNNX_PROD is coming from app registration ==> LearnNx - Prod Deployment Account
+      # This AZURE_CREDENTIALS_DEVELOPMENT_MING is coming from app registration ==> DEVELOPMENT MING Deployment Account
       # ASK RYAN
       azure-credentials: ${{ secrets.AZURE_CREDENTIALS_DEVELOPMENT_MING }}
       azure-subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
