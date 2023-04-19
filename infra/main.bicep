@@ -9,7 +9,7 @@ var abbrs = loadJsonContent('./abbreviations.json')
 
 var base = 'ming-learnnx-${environmentName}'
 var keyVaultName = '${abbrs.keyVaultVaults}-${base}'
-
+// Trigger test
 module keyVault './core/keyVaultCore.bicep' = {
   name: keyVaultName
   params: {
