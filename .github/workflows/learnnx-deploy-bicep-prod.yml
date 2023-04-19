@@ -19,10 +19,12 @@ jobs:
       resource-group-name: "development-ming"
     secrets:
       # This AZURE_CREDENTIALS_LEARNNX_PROD is coming from app registration ==> LearnNx - Prod Deployment Account
-      azure-credentials: ${{ secrets.AZURE_CREDENTIALS_LEARNNX_PROD }}
+      # ASK RYAN
+      azure-credentials: ${{ secrets.AZURE_CREDENTIALS_DEVELOPMENT_MING }}
       azure-subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
       # Github ==> Setting ==> Developer setting ==> Person Access Tokens ==> Fine-grained Tokens
       # Permissions: Actions, Metadata
       # Option 1: ${{ secrets.LEARNNX_REPOSITORY_TOKEN }}
       # Option 2: ${{ secrets.REPOSITORY_TOKEN }}
+      # Option 3: Workflow permissions
       repository-token: ${{ secrets.REPOSITORY_TOKEN }}
