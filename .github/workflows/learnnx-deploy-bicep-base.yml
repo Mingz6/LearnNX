@@ -28,8 +28,6 @@ jobs:
       - name: login
         uses: azure/login@v1
         with:
-          # this az-credentials is coming from learnnx-deploy-bicep-prod.yml file
-          # secrets must be capitalized
           creds: ${{ secrets.azure-credentials }}
 
       - name: deploy
