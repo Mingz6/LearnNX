@@ -1,0 +1,24 @@
+name: LearnNx web static app - Dev
+
+on:
+  push:
+    branches:
+      - feature/your-fancy-branch-name
+    paths:
+      - infra/*
+
+permissions:
+  contents: read
+
+jobs:
+  setup-static-web-app:
+    uses: ./.github/workflows/base-azure-static-web.yml
+    with:
+      app-location: 'react'
+      app-artifact-location: 'dist/apps/mingzsite'
+      app-build-command: 'npx nx run regi:build env --mode development'
+    secrets:
+      token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_DEV }}
+    permissions:
+      pull-requests: write
+      contents: read

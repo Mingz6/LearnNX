@@ -1,4 +1,5 @@
-name: PROD - Deploy MingZ Site web app to Azure Static Web Apps
+name: LearnNx web static app - Prod
+
 on:
   push:
     branches: 

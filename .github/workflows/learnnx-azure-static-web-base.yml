@@ -3,7 +3,7 @@
 # This workflow assumes you have already created the target Azure Static Web App.
 # For instructions see https://docs.microsoft.com/azure/static-web-apps/get-started-portal?tabs=vanilla-javascript
 
-name: Deploy LearnNx web app to Azure Static Web Apps
+name: LearnNx web static app - Base
 
 on:
   workflow_call:
