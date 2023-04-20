@@ -3,19 +3,19 @@
 	"contentVersion": "1.0.0.0",
 	"parameters": {
 		"environmentName": {
-			"value": "test"
+		"value": "test"
 		},
-		"tags" : {
-			"value": {
-				"Application":"LearnNx",
-				"Environment":"Test"
-			}
+		"tags": {
+		"value": {
+			"Application": "LearnNx",
+			"Environment": "Test"
+		}
 		},
-		"staticWebAppSku":{
-			"value": {
-					"name": "F1",
-					"tier": "Free"
-			}
+		"staticWebAppSku": {
+		"value": {
+			"name": "Free",
+			"tier": "Free"
+		}
 		}
 	}
 }
