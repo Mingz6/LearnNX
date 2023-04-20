@@ -8,7 +8,7 @@ export function App() {
   return (
     <>
       <NxWelcome title="mingzsite" />
-
+      <p>Hello world</p>
       <SharedUi />
 
       <div />
