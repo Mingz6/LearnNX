@@ -12,13 +12,26 @@ permissions:
 
 jobs:
   setup-static-web-app:
-    uses: ./.github/workflows/base-azure-static-web.yml
+    uses: ./.github/workflows/learnnx-azure-static-web-base.yml
     with:
       app-location: 'react'
       app-artifact-location: 'dist/apps/mingzsite'
       app-build-command: 'npx nx run mingzsite:build env --mode development'
     secrets:
       token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_DEV }}
+    permissions:
+      pull-requests: write
+      contents: read
+
+  setup-storybook-static-web-app:
+    uses: ./.github/workflows/learnnx-azure-static-web-base.yml
+    with:
+      app-location: 'react'
+      app-artifact-location: 'dist/storybook/shared-ui'
+      app-build-command: 'npx nx run shared-ui:build-storybook'
+    secrets:
+      # Where is this token? The static web app development token.
+      token: ${{ secrets.AZURE_STATIC_WEB_APPS_STORYBOOK_API_TOKEN_PROD }}
     permissions:
       pull-requests: write
       contents: read
