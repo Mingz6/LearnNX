@@ -12,6 +12,8 @@ on:
       - closed
     branches:
       - test
+  paths:
+    - infra/*
 
 permissions:
   contents: read
@@ -36,8 +38,7 @@ jobs:
       app-artifact-location: 'dist/storybook/shared-ui'
       app-build-command: 'npx nx run shared-ui:build-storybook'
     secrets:
-      # Where is this token? The static web app development token.
-      token: ${{ secrets.AZURE_STATIC_WEB_APPS_STORYBOOK_API_TOKEN_PROD }}
+      token: ${{ secrets.AZURE_STATIC_WEB_APPS_STORYBOOK_API_TOKEN_TEST }}
     permissions:
       pull-requests: write
       contents: read
