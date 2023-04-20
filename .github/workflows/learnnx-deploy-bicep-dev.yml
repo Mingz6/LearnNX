@@ -27,5 +27,5 @@ jobs:
       # Permissions: Actions, Metadata
       # Option 1: ${{ secrets.LEARNNX_REPOSITORY_TOKEN }}
       # Option 2: ${{ secrets.REPOSITORY_TOKEN }}
-      # Option 3: Workflow permissions
-      repository-token: ${{ secrets.MING_REPOSITORY_TOKEN }}
+      # Option 3: MING_REPOSITORY_TOKEN
+      repository-token: ${{ secrets.LEARNNX_REPOSITORY_TOKEN }}
