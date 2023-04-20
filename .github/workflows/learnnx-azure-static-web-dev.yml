@@ -6,7 +6,8 @@ on:
       - feature/your-fancy-branch-name
       - dev
     paths:
-      - infra/*
+      - react/apps/*
+      - react/libs/*
 
 permissions:
   contents: read
