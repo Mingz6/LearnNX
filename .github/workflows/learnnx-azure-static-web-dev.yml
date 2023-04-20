@@ -5,9 +5,9 @@ on:
     branches:
       - feature/your-fancy-branch-name
       - dev
-    paths:
-      - react/apps/*
-      - react/libs/*
+  paths:
+    - react/apps/*
+    - react/libs/*
 
 permissions:
   contents: read
