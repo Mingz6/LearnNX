@@ -7,7 +7,6 @@ on:
       - dev
   paths:
     - react/apps/*
-    - react/libs/*
 
 permissions:
   contents: read
@@ -16,9 +15,9 @@ jobs:
   setup-static-web-app:
     uses: ./.github/workflows/learnnx-azure-static-web-base.yml
     with:
-      app-location: "react"
-      app-artifact-location: "dist/apps/mingzsite"
-      app-build-command: "npx nx run mingzsite:build env --mode development"
+      app-location: 'react'
+      app-artifact-location: 'dist/apps/mingzsite'
+      app-build-command: 'npx nx run mingzsite:build env --mode development'
     secrets:
       # The static web app development token.
       # Stored under Setting ==> Secrets and Variables ==> Actions ==> Secrets
@@ -30,9 +29,9 @@ jobs:
   setup-storybook-static-web-app:
     uses: ./.github/workflows/learnnx-azure-static-web-base.yml
     with:
-      app-location: "react"
-      app-artifact-location: "dist/storybook/shared-ui"
-      app-build-command: "npx nx run shared-ui:build-storybook"
+      app-location: 'react'
+      app-artifact-location: 'dist/storybook/shared-ui'
+      app-build-command: 'npx nx run shared-ui:build-storybook'
     secrets:
       token: ${{ secrets.AZURE_STATIC_WEB_APPS_STORYBOOK_API_TOKEN_DEV }}
     permissions:
