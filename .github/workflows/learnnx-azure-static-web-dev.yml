@@ -19,6 +19,8 @@ jobs:
       app-artifact-location: 'dist/apps/mingzsite'
       app-build-command: 'npx nx run mingzsite:build env --mode development'
     secrets:
+      # The static web app development token.
+      # Stored under Setting ==> Secrets and Variables ==> Actions ==> Secrets
       token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_DEV }}
     permissions:
       pull-requests: write
@@ -31,7 +33,6 @@ jobs:
       app-artifact-location: 'dist/storybook/shared-ui'
       app-build-command: 'npx nx run shared-ui:build-storybook'
     secrets:
-      # Where is this token? The static web app development token.
       token: ${{ secrets.AZURE_STATIC_WEB_APPS_STORYBOOK_API_TOKEN_DEV }}
     permissions:
       pull-requests: write
