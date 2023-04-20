@@ -12,8 +12,6 @@ on:
       - closed
     branches: 
       - test
-  paths:
-    - infra/*
 
 permissions:
   contents: read
@@ -22,21 +20,9 @@ jobs:
   setup-static-web-app:
     uses: ./.github/workflows/learnnx-azure-static-web-base.yml
     with:
-      app-location: 'react'
-      app-artifact-location: 'dist/apps/regi'
-      app-build-command: 'npx nx run mingzsite:build --mode test'
-    secrets:
-      token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_TEST }}
-    permissions:
-      pull-requests: write
-      contents: read
-
-  setup-storybook-static-web-app:
-    uses: ./.github/workflows/learnnx-azure-static-web-base.yml
-    with:
-      app-location: 'react'
-      app-artifact-location: 'dist/storybook/shared-ui'
-      app-build-command: 'npx nx run shared-ui:build-storybook'
+      app-location: "react"
+      app-artifact-location: "dist/apps/mingzsite"
+      app-build-command: "npx nx run mingzsite:build --mode test"
     secrets:
       token: ${{ secrets.AZURE_STATIC_WEB_APPS_STORYBOOK_API_TOKEN_TEST }}
     permissions:
