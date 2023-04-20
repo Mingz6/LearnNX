@@ -1,0 +1,22 @@
+on:
+  push:
+    branches:
+      - test
+    paths:
+      - "infra/**/*.bicep"
+      - "infra/**/*.json"
+      - "infra/**/*.ps1"
+      - "core/**/*.bicep"
+      - ".github/workflows/learnnx-deploy-bicep.yml"
+
+name: Azure Bicep - Test
+jobs:
+  deploy-bicep-script:
+    uses: ./.github/workflows/learnnx-deploy-bicep-base.yml
+    with:
+      params-file: "./infra/paramsTest.json"
+      resource-group-name: "learnnx-test"
+    secrets:
+      azure-credentials: ${{ secrets.AZURE_CREDENTIALS_DEVELOPMENT_MING_TEST }}
+      azure-subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID }}
+      repository-token: ${{ secrets.REPOSITORY_TOKEN }}
