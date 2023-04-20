@@ -22,7 +22,7 @@ jobs:
     with:
       app-location: 'react'
       app-artifact-location: 'dist/apps/regi'
-      app-build-command: 'npx nx run regi:build --mode test'
+      app-build-command: 'npx nx run mingzsite:build --mode test'
     secrets:
       token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_TEST }}
     permissions:
@@ -33,8 +33,8 @@ jobs:
     uses: ./.github/workflows/base-azure-static-web.yml
     with:
       app-location: 'react'
-      app-artifact-location: 'dist/storybook/teams-components'
-      app-build-command: 'npx nx run teams-components:build-storybook'
+      app-artifact-location: 'dist/storybook/shared-ui'
+      app-build-command: 'npx nx run shared-ui:build-storybook'
     secrets:
       token: ${{ secrets.AZURE_STATIC_WEB_APPS_STORYBOOK_API_TOKEN_TEST }}
     permissions:

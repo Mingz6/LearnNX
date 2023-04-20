@@ -16,7 +16,7 @@ jobs:
     with:
       app-location: 'react'
       app-artifact-location: 'dist/apps/mingzsite'
-      app-build-command: 'npx nx run regi:build env --mode development'
+      app-build-command: 'npx nx run mingzsite:build env --mode development'
     secrets:
       token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_DEV }}
     permissions:
