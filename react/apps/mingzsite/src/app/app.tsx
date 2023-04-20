@@ -5,7 +5,7 @@ import { SharedUi } from '@learnnx/shared-ui';
 import NxWelcome from './nx-welcome';
 
 export function App() {
-  // Trigger yml file web
+  // Trigger yml file web2
 
   return (
     <>
