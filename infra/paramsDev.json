@@ -13,8 +13,8 @@
 		},
 		"staticWebAppSku":{
 			"value": {
-					"name": "Free",
-					"tier": "Free"
+				"name": "Standard",
+				"tier": "Standard"
 			}
 		}
 	}
