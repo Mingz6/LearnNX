@@ -15,7 +15,7 @@ on:
       repository-token:
         required: true
 
-name: Azure Bicep
+name: Azure Bicep - Base
 jobs:
   build-and-deploy:
     # if: github.event.pull_request.merged

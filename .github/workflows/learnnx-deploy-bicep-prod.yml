@@ -9,7 +9,7 @@ on:
       - "core/**/*.bicep"
       - ".github/workflows/learnnx-deploy-bicep-base.yml"
 
-name: Azure Bicep Prod
+name: Azure Bicep - Prod
 jobs:
   deploy-bicep-script:
     uses: ./.github/workflows/learnnx-deploy-bicep-base.yml
