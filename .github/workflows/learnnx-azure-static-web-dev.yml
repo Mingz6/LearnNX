@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - feature/your-fancy-branch-name
+      - dev
     paths:
       - infra/*
 
@@ -31,7 +32,7 @@ jobs:
       app-build-command: 'npx nx run shared-ui:build-storybook'
     secrets:
       # Where is this token? The static web app development token.
-      token: ${{ secrets.AZURE_STATIC_WEB_APPS_STORYBOOK_API_TOKEN_PROD }}
+      token: ${{ secrets.AZURE_STATIC_WEB_APPS_STORYBOOK_API_TOKEN_DEV }}
     permissions:
       pull-requests: write
       contents: read
