@@ -2,15 +2,15 @@ name: LearnNx web static app - Test
 
 on:
   push:
-    branches:
+    branches: 
       - test
   pull_request:
-    types:
+    types: 
       - opened
       - synchronize
-      - reopened
+      - reopened 
       - closed
-    branches:
+    branches: 
       - test
   paths:
     - infra/*
