@@ -24,8 +24,7 @@ jobs:
       app-artifact-location: "dist/apps/mingzsite"
       app-build-command: "npx nx run mingzsite:build --mode production"
     secrets:
-      # Where is this token coming from? Deployment token?
-      token: ${{ secrets.AZWEBTOKEN }}
+      token: ${{ secrets.AZURE_STATIC_WEB_APPS_STORYBOOK_API_TOKEN_PROD }}
     permissions:
       pull-requests: write
       contents: read
