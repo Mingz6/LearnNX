@@ -20,9 +20,9 @@ jobs:
   setup-static-web-app:
     uses: ./.github/workflows/learnnx-azure-static-web-base.yml
     with:
-      app-location: "react"
-      app-artifact-location: "dist/apps/mingzsite"
-      app-build-command: "npx nx run mingzsite:build --mode production"
+      app-location: 'react'
+      app-artifact-location: 'dist/apps/mingzsite'
+      app-build-command: 'npx nx run mingzsite:build --mode production'
     secrets:
       token: ${{ secrets.AZURE_STATIC_WEB_APPS_STORYBOOK_API_TOKEN_PROD }}
     permissions:
