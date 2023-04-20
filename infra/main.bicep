@@ -7,7 +7,7 @@ param location string = resourceGroup().location
 
 var abbrs = loadJsonContent('./abbreviations.json')
 
-var base = 'ming-learnnx-${environmentName}'
+var base = 'learnnx-${environmentName}'
 var keyVaultName = '${abbrs.keyVaultVaults}-${base}'
 
 module keyVault './core/keyVaultCore.bicep' = {
@@ -45,7 +45,7 @@ module web './core/staticwebappCore.bicep' = {
 }
 
 var storybookServiceName = 'stapp-${base}-storybook-${environmentName}'
-// If environment is prod, deploy the storybook. I only have prod for now.
+// If environment is dev or test, deploy the storybook.
 module storybookWeb './core/staticwebappCore.bicep' = if (environmentName == 'dev' || environmentName == 'test') {
   name: storybookServiceName
   params: {
