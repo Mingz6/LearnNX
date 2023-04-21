@@ -22,7 +22,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       # Checkout code
-      - uses: actions/checkout@main
+      - uses: actions/checkout@master
 
         # Log into Azure
       - name: login

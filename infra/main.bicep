@@ -9,7 +9,7 @@ var abbrs = loadJsonContent('./abbreviations.json')
 
 var base = 'learnnx-${environmentName}'
 var keyVaultName = '${abbrs.keyVaultVaults}-${base}'
-// trigger yml5
+// trigger yml6
 module keyVault './core/keyVaultCore.bicep' = {
   name: keyVaultName
   params: {
