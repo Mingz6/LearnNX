@@ -30,6 +30,7 @@ jobs:
       # To setup the new credentials, you can use this command:
       # az ad sp create-for-rbac --name "<group>" --role contributor --scopes /subscriptions/<###-###-###>/resourceGroups/<yourGroup> --sdk-auth
       # Then Save the output to GitHub Secrets
+      # More docs: https://github.com/Azure/actions-workflow-samples/blob/master/assets/create-secrets-for-GitHub-workflows.md
 
       - name: login
         uses: azure/login@v1
