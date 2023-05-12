@@ -24,7 +24,13 @@ jobs:
       # Checkout code
       - uses: actions/checkout@master
 
-        # Log into Azure
+      # Log into Azure with 
+      # The Azure credentials is coming from app registration ==> <Deployment Account>
+      # You can test this secret with command: az login --service-principal -u <app-id> -p <-secrets> --tenant <tenant>
+      # To setup the new credentials, you can use this command:
+      # az ad sp create-for-rbac --name "<group>" --role contributor --scopes /subscriptions/<###-###-###>/resourceGroups/<yourGroup> --sdk-auth
+      # Then Save the output to GitHub Secrets
+
       - name: login
         uses: azure/login@v1
         with:
