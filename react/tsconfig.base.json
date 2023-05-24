@@ -15,7 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@learnnx/shared-ui": ["libs/shared-ui/src/index.ts"]
+      "@learnnx/shared-ui": ["libs/shared-ui/src/lib/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

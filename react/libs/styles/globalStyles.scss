@@ -1,0 +1,34 @@
+:root {
+  --navWidthOpen: 270px;
+  --navWidthClosed: 40px;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
+}
+
+a {
+  text-decoration: none;
+  color: var(--colorNeutralForeground1);
+}
+
+.fui-DialogSurface {
+  width: 75% !important;
+  max-width: 75% !important;
+}
+
+.fui-DialogSurface.small-dialog {
+  width: 15% !important;
+  max-width: 15% !important;
+}
+
+.fui-DialogSurface.medium-dialog {
+  width: 50% !important;
+  max-width: 50% !important;
+}
+
+.fui-DialogBody {
+  width: 100% !important;
+  max-width: 100% !important;
+}

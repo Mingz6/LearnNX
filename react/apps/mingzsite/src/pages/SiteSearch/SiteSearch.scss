@@ -1,0 +1,52 @@
+.registrants {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+
+  .actions-row {
+    border-bottom: 1px solid var(--colorNeutralStroke1Hover);
+  }
+
+  .body {
+    background-color: var(--colorNeutralBackground3);
+  }
+
+  .registrant-search-wrapper {
+    position: relative;
+    overflow: hidden;
+    flex-grow: 1;
+
+    & .filter-rail {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+  }
+
+  .registrant-list {
+    transition: padding-right var(--durationNormal) ease-out, opacity var(--durationNormal) ease-out;
+
+    .data-row {
+      border-bottom-color: transparent;
+
+      &:hover {
+        background-color: unset;
+      }
+    }
+
+    &.filters-open {
+      padding-right: calc(var(--spacingHorizontalXXXL) + 270px);
+    }
+
+    & * {
+      box-sizing: content-box;
+    }
+
+    .search-box {
+      padding: var(--spacingVerticalS) var(--spacingHorizontalM);
+      margin-left: var(--spacingHorizontalXXXL);
+      margin-bottom: var(--spacingVerticalL);
+      width: 300px;
+    }
+  }
+}

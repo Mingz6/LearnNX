@@ -1,19 +1,25 @@
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-import styles from './app.module.scss';
-import { SharedUi } from '@learnnx/shared-ui';
+import './App.scss';
+import SiteLogo from '../assets/SiteLogo.png';
+import { PrimaryNavigationTabs, SharedUi } from '@learnnx/shared-ui';
+import { TopNavRoutes } from './TopNavRoutes';
+import { Outlet } from 'react-router-dom';
 
-import NxWelcome from './nx-welcome';
-
-export function App() {
-
+const App = () => {
+  // Toggle for theme in the long run
   return (
-    <>
-      <NxWelcome title="mingzsite" />
-      <SharedUi />
-
-      <div />
-    </>
+    <div className="site-app">
+      <div className="site-nav">
+        <PrimaryNavigationTabs
+          logo={SiteLogo}
+          logoTitle="Site Title"
+          navItems={TopNavRoutes}
+        />
+      </div>
+      <main className="page-wrapper">
+        <Outlet />
+      </main>
+    </div>
   );
-}
+};
 
 export default App;

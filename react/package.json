@@ -36,6 +36,7 @@
     "@swc/core": "^1.2.173",
     "@testing-library/react": "13.4.0",
     "@types/jest": "28.1.1",
+    "@types/lodash-es": "^4.17.7",
     "@types/node": "18.11.9",
     "@types/react": "18.0.25",
     "@types/react-dom": "18.0.9",
@@ -76,8 +77,10 @@
     "vitest": "^0.25.8"
   },
   "dependencies": {
+    "lodash-es": "^4.17.21",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-router-dom": "^6.11.2",
     "tslib": "^2.3.0"
   },
   "engines": {
